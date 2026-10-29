@@ -1,6 +1,10 @@
 {
-  "buildCommand": "cd frontend && npm install && npm run build",
-  "outputDirectory": "frontend/dist",
-  "installCommand": "npm install",
-  "framework": "vite"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "main.py": {
+      "maxDuration": 60,
+      "includeFiles": "dist/**"
+    }
+  },
+  "framework": "fastapi"
 }
